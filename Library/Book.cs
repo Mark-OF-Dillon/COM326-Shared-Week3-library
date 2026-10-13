@@ -54,13 +54,13 @@ namespace Library
             private set
             {
                 // Ensure name does not contain any numbers
-                if (!value.Any(char.IsDigit) && value != "")
+                if (value.Any(char.IsDigit) && value != "")
                 {
                     isbn = value;
                 }
                 else
                 {
-                    Console.WriteLine("Error: ISBN cannot be blank or contain numbers.");
+                    Console.WriteLine("Error: ISBN cannot be blank or contain letters.");
                 }
             }
         }
@@ -75,7 +75,7 @@ namespace Library
 
         public void DisplayInfo()
         {
-            Console.WriteLine($"Book title: {Title}");
+            Console.WriteLine($"Book Title: {Title}");
             Console.WriteLine($"Book Author: {Author}");
             Console.WriteLine($"Book ISBN: {ISBN}");
             Console.WriteLine();
